@@ -2,20 +2,24 @@
   "name": "mcp-server-correios-api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "src/mcp.ts",
+  "bin": {
+    "mcp-server-correios-api": "dist/mcp.js"
+  },
   "scripts": {
-    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/server.ts",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/mcp.ts",
+    "build": "tsc && chmod 755 dist/mcp.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.15.0",
     "axios": "^1.10.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
